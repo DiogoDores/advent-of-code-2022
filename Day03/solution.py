@@ -3,10 +3,7 @@ rucksacks = [line.strip() for line in f]
 duplicateItems, badges = [], []
 
 def getPriority(letter):
-    if letter.isupper():
-        return ord(letter) - 38
-    else:
-        return ord(letter) - 96
+    return ord(letter) - 38 if letter.isupper() else ord(letter) - 96
 
 def chunker(seq, size):
     return (seq[pos:pos + size] for pos in range(0, len(seq), size))
